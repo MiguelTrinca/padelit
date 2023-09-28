@@ -70,7 +70,7 @@ const SignInButton: NextPage<SignInButtonType> = ({
 
   return (
     <div
-      className="rounded-31xl bg-sandybrown-100 flex flex-row items-center justify-center py-[13px] px-[50px] text-left text-base text-white font-montserrat"
+      className="rounded-31xl bg-accent-yellow-100 flex flex-row items-center justify-center py-[13px] px-[50px] text-left text-base text-white font-montserrat"
       style={property1FilledStyle}
     >
       <b
