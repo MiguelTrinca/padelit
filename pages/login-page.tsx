@@ -59,7 +59,7 @@ const LoginPage: NextPage = () => {
               <span>{`Don’t have an account? `}</span>
               <span className="text-cornflowerblue-100">Sign up</span>
             </div>
-            <button className="cursor-pointer [border:none] p-2.5 bg-accent-yellow-100 rounded-41xl w-[135px] h-[58px] flex flex-row items-center justify-center box-border hover:bg-darkorange">
+            <button className="cursor-pointer [border:none] p-2.5 bg-accent-yellow rounded-41xl w-[135px] h-[58px] flex flex-row items-center justify-center box-border hover:bg-darkorange">
               <b className="relative text-xs font-montserrat text-white text-center">
                 Sign In
               </b>

@@ -22,7 +22,7 @@ const NewsLetter: NextPage = () => {
           </h1>
           <h1 className="m-0 relative text-base inline-block w-[312px] font-inherit">
             <span>{`We are hard at work building `}</span>
-            <b className="text-accent-yellow-100">PadelIt.</b>
+            <b className="text-accent-yellow">PadelIt.</b>
             <span>
               <span className="font-montserrat">{` We cannot be more `}</span>
               <b className="font-montserrat">exited</b>
@@ -32,7 +32,7 @@ const NewsLetter: NextPage = () => {
               <b className="font-montserrat">sign up</b>
               <span>{` for the newsletter and get additional `}</span>
             </span>
-            <b className="text-accent-yellow-100">rewards!</b>
+            <b className="text-accent-yellow">rewards!</b>
             <span>{`  `}</span>
           </h1>
           <div className="flex flex-col items-center justify-center text-mini">
@@ -82,7 +82,7 @@ const NewsLetter: NextPage = () => {
           />
           <div className="w-[312px] flex flex-row items-center justify-end gap-[24px]">
             <div className="relative w-[226px] h-[41px] overflow-hidden shrink-0" />
-            <button className="cursor-pointer [border:none] p-2.5 bg-accent-yellow-100 self-stretch flex-1 rounded-41xl flex flex-row items-center justify-center hover:bg-darkorange">
+            <button className="cursor-pointer [border:none] p-2.5 bg-accent-yellow self-stretch flex-1 rounded-41xl flex flex-row items-center justify-center hover:bg-darkorange">
               <b className="relative text-2xs font-montserrat text-white text-center">
                 Sign Up
               </b>
