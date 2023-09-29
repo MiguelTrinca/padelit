@@ -50,7 +50,7 @@ const ProductTestimonialCardSize: NextPage<ProductTestimonialCardSizeType> = ({
 
   return (
     <div
-      className="h-full rounded-5xs bg-white shadow-[0px_3px_16px_rgba(0,_0,_0,_0.08)] w-[207px] flex flex-col items-center justify-start py-6 px-4 box-border gap-[24px] text-center text-base text-black font-text-small"
+      className="h-full rounded-5xs bg-white shadow-[0px_3px_16px_rgba(0,_0,_0,_0.08)] w-[207px] flex flex-col items-center justify-start py-6 px-4 box-border gap-[24px] text-center text-base text-black font-inter"
       style={productTestimonialCardSizeStyle}
     >
       <img

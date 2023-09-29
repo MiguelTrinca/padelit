@@ -127,7 +127,7 @@ const PricingSection: NextPage<PricingSectionType> = ({
 
   return (
     <div
-      className="bg-white overflow-hidden flex flex-col items-center justify-start py-[39px] px-28 box-border gap-[41px] text-center text-29xl text-dark-blue font-text-small self-stretch"
+      className="bg-white overflow-hidden flex flex-col items-center justify-start py-[39px] px-28 box-border gap-[41px] text-center text-29xl text-dark-blue font-inter self-stretch"
       style={plansStyle}
     >
       <div className="self-stretch overflow-hidden flex flex-col items-center justify-start p-2.5">
@@ -194,7 +194,7 @@ const PricingSection: NextPage<PricingSectionType> = ({
             </div>
           </div>
           <button className="cursor-pointer py-1.5 px-4 bg-[transparent] rounded-xl overflow-hidden flex flex-row items-center justify-center border-[1px] border-solid border-gray-blue hover:bg-gainsboro-100">
-            <div className="relative text-xs leading-[20px] font-text-small text-dark-blue text-center">
+            <div className="relative text-xs leading-[20px] font-inter text-dark-blue text-center">
               Start today
             </div>
           </button>
@@ -268,7 +268,7 @@ const PricingSection: NextPage<PricingSectionType> = ({
             style={buttonStyle}
           >
             <div
-              className="relative text-xs leading-[20px] font-text-small text-dark-blue text-center"
+              className="relative text-xs leading-[20px] font-inter text-dark-blue text-center"
               style={button1Style}
             >
               Start today
@@ -332,7 +332,7 @@ const PricingSection: NextPage<PricingSectionType> = ({
             </div>
           </div>
           <button className="cursor-pointer py-1.5 px-4 bg-[transparent] rounded-xl overflow-hidden flex flex-row items-center justify-center border-[1px] border-solid border-gray-blue hover:bg-gainsboro-100">
-            <div className="relative text-xs leading-[20px] font-text-small text-dark-blue text-center">
+            <div className="relative text-xs leading-[20px] font-inter text-dark-blue text-center">
               Start today
             </div>
           </button>

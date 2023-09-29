@@ -40,7 +40,7 @@ const QualityFeaturesSection: NextPage<QualityFeaturesSectionType> = ({
 
   return (
     <div
-      className="flex flex-col items-start justify-start p-2.5 text-left text-21xl text-dark-blue font-text-small"
+      className="flex flex-col items-start justify-start p-2.5 text-left text-21xl text-dark-blue font-inter"
       style={property1QualityFeaturesStyle}
     >
       <div

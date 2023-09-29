@@ -28,6 +28,7 @@ module.exports = {
         "dark-gray": "#334158",
         lightseagreen: "#00ac92",
         "accent-yellow": "#feaf53",
+        "hover-yellow": "#c47923",
         peru: {
           "100": "#dd9038",
           "200": "#c47923",
@@ -58,6 +59,7 @@ module.exports = {
       spacing: {},
       fontFamily: {
         "text-small": "Inter",
+        inter: "Inter",
         roboto: "Roboto",
         montserrat: "Montserrat",
         "dm-sans": "'DM Sans'",

@@ -36,7 +36,7 @@ const TestimonialSection: NextPage<TestimonialSectionType> = ({
 
   return (
     <div
-      className="bg-dark-blue flex flex-col items-center justify-center py-[72px] px-0 box-border gap-[80px] text-left text-21xl text-white font-text-small self-stretch"
+      className="bg-dark-blue flex flex-col items-center justify-center py-[72px] px-0 box-border gap-[80px] text-left text-21xl text-white font-inter self-stretch"
       style={testimonialSectionStyle}
     >
       <div

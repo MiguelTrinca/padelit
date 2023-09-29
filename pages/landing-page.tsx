@@ -3,7 +3,7 @@ import HeroSection from "../components/hero-section";
 import NavbarSection from "../components/navbar-section";
 import QualityFeaturesSection from "../components/quality-features-section";
 import TestimonialSection from "../components/testimonial-section";
-import ExitingMoreFeaturesSection from "../components/exiting-more-features-section";
+import ExitingMoreFeaturesSection from "../components/landing-page/sections/exiting-features-section";
 import PricingSection from "../components/pricing-section";
 import FooterSection from "../components/footer-section";
 
@@ -12,139 +12,24 @@ const LandingPage: NextPage = () => {
     <div className="relative bg-white w-full overflow-hidden flex flex-col items-center justify-start">
       <HeroSection
         newsletterTitle="Experience Padel like Never Before!"
-        uxNewsletterDescription="We are hard at work building PadelIt. We cannot be more exited for you to join us! Right now you can sign up for the newsletter and get additional rewards!  "
-        emailPromoTitle="This is a hint text for the user"
-        thisIsA
-        showEmail={false}
-        icon2
-        imageAlignmentBottomTypeFHeight="818px"
-        imageAlignmentBottomTypeFBackgroundImage="url('/hero-sections@3x.png')"
-        imageAlignmentBottomTypeFZIndex="0"
-        everythingUXNewsletterFontSize="60px"
-        everythingUXNewsletterColor="#fff"
-        everythingUXIsFontSize="20px"
-        everythingUXIsFontFamily="Montserrat"
-        everythingUXIsColor="#fff"
-        emailColor="#202835"
-        iconAlignSelf="stretch"
-        iconFontSize="12px"
-        iconLineHeight="20px"
-        iconFontFamily="Inter"
-        iconColor="#676f82"
-        iconTextAlign="left"
-        jeraldinelocofyuiaiAlignSelf="stretch"
-        jeraldinelocofyuiaiDisplay="flex"
-        jeraldinelocofyuiaiFlexDirection="column"
-        jeraldinelocofyuiaiAlignItems="flex-start"
-        jeraldinelocofyuiaiJustifyContent="flex-start"
-        thisIsAFlexDirection="column"
-        thisIsAAlignItems="flex-start"
-        thisIsAJustifyContent="flex-start"
-        thisIsAGap="6px"
-        inputFieldDisplay="inline-block"
-        inputFieldPosition="relative"
-        inputFieldFontSize="14px"
-        inputFieldLineHeight="22px"
-        inputFieldFontFamily="Inter"
-        inputFieldColor="#202835"
-        inputFieldTextAlign="left"
-        inputFieldBaseFlexDirection="row"
-        inputFieldBaseAlignItems="center"
-        inputFieldBaseGap="unset"
-        inputFieldBaseBorder="1px solid #e2e4ea"
-        inputFieldBaseBackgroundColor="#fff"
-        inputFieldBaseBorderRadius="4px"
-        inputFieldBasePadding="10px 14px"
-        emailColor1="#676f82"
-        frameDivBackgroundColor="#feaf53"
-        frameDivBorder="none"
-        frameDivJustifyContent="center"
-        frameDivCursor="pointer"
-        iconFontSize1="14px"
-        iconLineHeight1="22px"
-        iconFontFamily1="Inter"
-        iconColor1="#fff"
-        iconTextAlign1="center"
-        imageAlignmentBottomTypeFBorderRadius="unset"
-        everythingUXIsLineHeight="unset"
-        frameDivGap="unset"
-        iconWidth="unset"
-        iconHeight="unset"
-        iconOverflow="unset"
-        iconFlexShrink="unset"
-        jeraldinelocofyuiaiBorder="unset"
-        jeraldinelocofyuiaiFontFamily="unset"
-        jeraldinelocofyuiaiFontSize="unset"
-        jeraldinelocofyuiaiBackgroundColor="unset"
-        jeraldinelocofyuiaiFlex="unset"
-        jeraldinelocofyuiaiPosition="unset"
-        jeraldinelocofyuiaiLineHeight="unset"
-        jeraldinelocofyuiaiColor="unset"
-        jeraldinelocofyuiaiTextAlign="unset"
-        jeraldinelocofyuiaiOverflow="unset"
-        jeraldinelocofyuiaiTextOverflow="unset"
-        jeraldinelocofyuiaiWhiteSpace="unset"
-        thisIsAPosition="unset"
-        thisIsAFontSize="unset"
-        thisIsALineHeight="unset"
-        thisIsAFontFamily="unset"
-        thisIsAColor="unset"
-        thisIsATextAlign="unset"
-        inputFieldFlexDirection="unset"
-        inputFieldAlignItems="unset"
-        inputFieldJustifyContent="unset"
-        frameDivAlignSelf="unset"
-        frameDivGap1="unset"
-        iconWidth1="unset"
-        iconHeight1="unset"
-        iconOverflow1="unset"
-        iconFlexShrink1="unset"
-        showIcon
+        newsletterDescription="We are hard at work building PadelIt. We cannot be more exited for you to join us! Right now you can sign up for the newsletter and get additional rewards!  "
+        hintName="This is a hint text for the user"
+        showHintName={false}
       />
-      <NavbarSection
-        imageDimensions="/locouilogo3.svg"
-        componentSize="/locoui3.svg"
-        sectionTitle="Features"
-        sectionSubtitle="Testimonials"
-        sectionLinkText="Plans"
-        imageDimensions2="/group-51.svg"
-        showGroupIcon={false}
-        typeFillBackgroundColor="unset"
-        typeFillPosition="absolute"
-        typeFillBackground="unset"
-        typeFillAlignSelf="stretch"
-        typeFillMargin="0 !important"
-        typeFillLeft="0px"
-        typeFillZIndex="1"
-        frameDivJustifyContent="space-between"
-        frameDivGap="unset"
-        homeFontFamily="Inter"
-        homeCursor="pointer"
-        homeBorder="none"
-        homePadding="0"
-        homeBackgroundColor="transparent"
-        homeFontWeight="300"
-        gettingATaxiFontFamily="Inter"
-        gettingATaxiCursor="pointer"
-        gettingATaxiBorder="none"
-        gettingATaxiPadding="0"
-        gettingATaxiBackgroundColor="transparent"
-        gettingATaxiFontWeight="300"
-        mobileAppTextDecoration="unset"
-        mobileAppFontFamily="Inter"
-        mobileAppCursor="pointer"
-        mobileAppBorder="none"
-        mobileAppPadding="0"
-        mobileAppBackgroundColor="transparent"
-        mobileAppFontWeight="300"
-        contactUsFontFamily="Inter"
-        contactUsCursor="pointer"
-        contactUsBorder="none"
-        contactUsPadding="0"
-        contactUsBackgroundColor="transparent"
-        contactUsFontWeight="300"
+
+      <NavbarSection/>
+      <ExitingMoreFeaturesSection/>
+      <FooterSection
+        dimension="/locouilogo4.svg"
+        dimensionText="/locoui4.svg"
+        dimensionValue="/vector5.svg"
+        dimensionTextValue="/vector6.svg"
+        dimensionTextValueImage="/vector7.svg"
+        footerZIndex="6"
       />
-      <QualityFeaturesSection
+
+
+      {/*<QualityFeaturesSection
         imageDimensions="/heroiconsusergroupsolid1.svg"
         imageDimensionsText="/icoutlinesearch1.svg"
         imageDimensionsCode="/icbaselinerocket7.svg"
@@ -153,28 +38,14 @@ const LandingPage: NextPage = () => {
         property1QualityFeaturesZIndex="2"
         feauteHighlightWidth="unset"
         feauteHighlightAlignSelf="stretch"
-      />
-      <TestimonialSection
+      />*/}
+      {/*<TestimonialSection
         testimonialSectionZIndex="3"
         textWrapperJustifyContent="space-between"
         wrapperJustifyContent="space-between"
         wrapperGap="unset"
-      />
-      <ExitingMoreFeaturesSection
-        imageCode="/icbaselinerocket9.svg"
-        imageCode2="/icbaselinerocket10.svg"
-        imageCodeUrl="/icbaselinerocket11.svg"
-        imageCodeDimensions="/icbaselinerocket12.svg"
-        imageCodeDimensionsUrl="/icbaselinerocket13.svg"
-        imageCodeText="/phcrownsimple1.svg"
-        property1OtherFeaturesZIndex="4"
-        frameDivWidth="483px"
-        exitingMoreFeaturesTextAlign="center"
-        exitingMoreFeaturesAlignSelf="stretch"
-        theseExcitingNewTextAlign="center"
-        theseExcitingNewAlignSelf="stretch"
-      />
-      <PricingSection
+      />*/}
+      {/*<PricingSection
         imageDimensions="/icon5.svg"
         imageDimensionsText="/icon5.svg"
         imageDimensionsId="/icon5.svg"
@@ -203,15 +74,8 @@ const LandingPage: NextPage = () => {
         proWidth="unset"
         proFlexShrink="unset"
         proFlex="1"
-      />
-      <FooterSection
-        dimension="/locouilogo4.svg"
-        dimensionText="/locoui4.svg"
-        dimensionValue="/vector5.svg"
-        dimensionTextValue="/vector6.svg"
-        dimensionTextValueImage="/vector7.svg"
-        footerZIndex="6"
-      />
+      />*/}
+      
     </div>
   );
 };
