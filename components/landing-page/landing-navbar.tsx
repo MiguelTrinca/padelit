@@ -31,10 +31,10 @@ const LandingNavbar:NextPage = () => {
 							src='/logo/Logo-Compacto-Landing.svg'/>
       			</div>
       			<div className="flex flex-row items-center justify-between md:hidden text-light-background">
-        				<button className='w-[51.82px]' style={navLinksStyle}>Home</button>
+        				{/*<button className='w-[51.82px]' style={navLinksStyle}>Home</button>
         				<button className="w-[105.18px]" style={navLinksStyle}>Features</button>
         				<button className="w-[92.74px]" style={navLinksStyle}>Testimonials</button>
-        				<button className="w-[89.46px]" style={navLinksStyle}>Plans</button>
+        				<button className="w-[89.46px]" style={navLinksStyle}>Plans</button>*/}
       			</div>
     		</header>);
 };
