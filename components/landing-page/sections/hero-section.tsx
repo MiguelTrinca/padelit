@@ -1,7 +1,7 @@
-import type { NextPage } from "next";
+import Link  from "next/link";
 
-const HeroSection: NextPage = () => {
-  
+const HeroSection = () => {
+ 
   return ( 
     <div
       className="rounded-5xs h-[566px] overflow-hidden shrink-0 flex flex-col items-start justify-center py-5 px-10 box-border bg-[url('/image-alignmentbottom-typeform-backgroundsimple@3x.png')] bg-cover bg-no-repeat bg-[top] text-left text-21xl text-dark-gray font-inter self-stretch"
@@ -23,13 +23,18 @@ const HeroSection: NextPage = () => {
               We are hard at work building <span className="font-bold text-accent-yellow">PadelIt!</span>. We cannot be more excited for you to join us! Keep up to date with our development and gain rewards for subscribing to our <span className="font-bold text-accent-yellow">Newsletter!</span>
             </div>
           </div>
+
           <div>
-            <button className="cursor-pointer [border:none] py-3 px-5 bg-accent-yellow rounded-md overflow-hidden flex flex-row items-center justify-center hover:bg-hover-yellow">
-              <div className="relative text-sm leading-[22px] font-bold font-inter text-white text-center">
-                Subscribe to Newsletter
-              </div>
-            </button>
+            <Link href="/newsletter" style={{ textDecoration: 'none', color: 'inherit' }}>
+                <div className="cursor-pointer py-3 px-5 bg-accent-yellow rounded-md overflow-hidden flex flex-row items-center justify-center hover:bg-hover-yellow">
+                  <div className="relative text-sm leading-[22px] font-bold font-inter text-white text-center">
+                    Subscribe to Newsletter
+                  </div>
+                </div>
+            </Link>
           </div>
+
+
         </div>
       </div>
     </div>

@@ -1,6 +1,4 @@
-import type { NextPage } from "next";
-
-const LoginPage: NextPage = () => {
+const LoginPage = () => {
   return (
     <div className="relative bg-white w-full h-[1024px] overflow-hidden flex flex-col items-center justify-center text-center text-xs text-white font-montserrat">
       <div className="rounded-4xl bg-dark-blue w-[559px] h-[575px] overflow-hidden shrink-0 flex flex-row items-start justify-start pt-8 pb-[21px] pr-10 pl-[26px] box-border">

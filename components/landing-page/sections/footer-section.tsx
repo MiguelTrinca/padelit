@@ -1,10 +1,7 @@
-import type { NextPage } from "next";
 import { useMemo, type CSSProperties } from "react";
 
-type FooterSectionType = {
-};
 
-const FooterSection: NextPage<FooterSectionType> = ({
+const FooterSection = ({
 }) => {
   
   const socialLogoStyle: CSSProperties = useMemo(() => {

@@ -1,11 +1,7 @@
-import type { NextPage } from "next";
 import FeaturesList from "../features-list";
+import Link from "next/link";
 
-type ExitingFeaturesSectionType = {
-  
-};
-
-const ExitingFeaturesSection: NextPage<ExitingFeaturesSectionType> = ({
+const ExitingFeaturesSection = ({
 
 }) => {
   
@@ -20,7 +16,7 @@ const ExitingFeaturesSection: NextPage<ExitingFeaturesSectionType> = ({
           Exiting Features
         </b>
         <div className="relative text-base leading-[24px]">
-          We are exicted to showcase these amazing features as soon as possible. Make sure you <span className="font-semibold text-accent-yellow">subscribe to the newsletter</span> to keep up to date a earn rewards!
+          We are exicted to showcase these amazing features as soon as possible. Make sure you <Link href="/newsletter" style={{ textDecoration: 'none', color: 'inherit' }}> <span className="font-semibold underline text-accent-yellow">subscribe to the newsletter</span></Link> to keep up to date a earn rewards!
         </div>
       </div>
 
