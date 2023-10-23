@@ -24,3 +24,13 @@ body {
     box-shadow: 0 12px 20px -12px rgb(0 0 0 / 35%);
   }
 }
+
+
+@keyframes scale-up {
+  0% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

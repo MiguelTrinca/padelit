@@ -55,6 +55,7 @@ module.exports = {
         },
         gold: "#f6c416",
         darkorange: "rgba(243, 150, 43, 0.72)",
+        "bad-red": "#f4485d",
       },
       spacing: {},
       fontFamily: {
@@ -93,6 +94,7 @@ module.exports = {
       "3xl": "22px",
       "5xl": "24px",
       inherit: "inherit",
+      "50x1": "50px",
     },
     screens: {
       lg: {
