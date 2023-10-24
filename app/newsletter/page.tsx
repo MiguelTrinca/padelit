@@ -11,17 +11,17 @@ const NewsletterPage: NextPage = () => {
 		<Image
         	alt=""
         	src={"/newsletter/darken-newsletterImage.png"}
-        	fill
-        	sizes = "100vm"
-        	style={{objectFit: 'cover'}}
+        	layout="fill"
+			objectFit="cover"
       	/>
 
 		<RewardsSection/>
-    
+    <div className="h-screen">Hello 1</div>
 	</div>
 
     {/* Second Column */}
 	<NewsletterSection/>
+	<div>HELLO!</div>
   </div>
   );
 };
