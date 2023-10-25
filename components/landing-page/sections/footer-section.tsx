@@ -31,7 +31,7 @@ return (
                         />
             </div>
             
-                    <div className="relative w-[158.47px] h-[36.57px]">
+            <div className="relative w-[158.47px] h-[36.57px]">
                 <a className="[text-decoration:none] absolute top-[0px] left-[0px] w-[36.57px] h-[36.57px] overflow-hidden">
                     <img className="" 
                                     alt="" 
@@ -51,65 +51,18 @@ return (
                                     alt="" 
                                     src="/vector7.svg"
                                     style={socialLogoStyle}
-                                />
+                    />
                 </a>
             </div>
         </div>
         <div className="flex-1 overflow-hidden flex flex-row items-center justify-center py-[62px] px-0 text-[20px] md:flex-[unset] md:self-stretch">
-            <div className="relative leading-[27px] font-semibold">Made with love for Padel</div>
+            <div className="relative leading-[27px] font-semibold">Made with love for Padel 🧡</div>
         </div>
     </div>
       );
 };
 
 export default FooterSection;
-      
-      /**
-      <div className="flex-1 flex flex-row items-start justify-start gap-[20px] text-base text-grey-white md:flex-[unset] md:self-stretch sm:flex-col sm:gap-[40px]">       
-        <div className="flex-1 flex flex-col items-start justify-start gap-[14px] sm:flex-[unset] sm:self-stretch">
-          <div className="self-stretch relative text-xl leading-[27px] font-semibold text-white">
-            Company
-          </div>
-          <div className="self-stretch relative font-light">About Us</div>
-          <div className="self-stretch relative font-light">News</div>
-          <div className="self-stretch relative font-light">Careers</div>
-          <div className="self-stretch relative font-light">How we work</div>
-        </div>
-        <div className="flex-1 flex flex-col items-start justify-start gap-[14px] sm:flex-[unset] sm:self-stretch">
-          <div className="self-stretch relative text-xl leading-[27px] font-semibold text-white">
-            Support
-          </div>
-          <div className="self-stretch relative font-light">FAQ</div>
-          <div className="self-stretch relative font-light">US Office</div>
-          <div className="self-stretch relative font-light">Asia Office</div>
-          <div className="self-stretch relative font-light">Help Center</div>
-        </div>
-        <div className="flex-1 flex flex-col items-start justify-start gap-[15px] sm:flex-[unset] sm:self-stretch">
-          <div className="self-stretch relative text-xl leading-[27px] font-semibold text-white">
-            More
-          </div>
-          <div className="self-stretch relative font-light">
-            Become a partner
-          </div>
-          <div className="self-stretch relative font-light">
-            Partner Support
-          </div>
-          <div className="self-stretch relative font-light">
-            Driver Requirements
-          </div>
-        </div>
-        <div className="flex-1 flex flex-col items-start justify-start gap-[15px] sm:flex-[unset] sm:self-stretch">
-          <div className="self-stretch relative text-xl leading-[27px] font-semibold text-white">
-            App
-          </div>
-          <div className="self-stretch relative font-light">Report Bug</div>
-          <div className="self-stretch relative font-light">App Helpdesk</div>
-          <div className="self-stretch relative font-light">
-            Mobile app links
-          </div>
-        </div>
-      </div>
-      */
 
 
 
