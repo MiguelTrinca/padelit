@@ -5,6 +5,7 @@
       ignoreBuildErrors: true,
     },
     output: 'export',
+    distDir: "dist"
   }
 
   module.exports = nextConfig
