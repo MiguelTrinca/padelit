@@ -36,3 +36,7 @@ yarn-error.log*
 
 # workspace
 padelit.code-workspace
+
+
+#test
+test.next.config.js
