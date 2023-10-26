@@ -25,7 +25,7 @@ const NewsletterForm = () => {
   const onSubmit = async (data: TSubSchema) => {
     //TODO: submit to server
     //....
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    //await new Promise((resolve) => setTimeout(resolve, 2000));
     router.push('/newsletter/thanks');
   }
 
