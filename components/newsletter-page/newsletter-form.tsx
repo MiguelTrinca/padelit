@@ -10,6 +10,7 @@ import { useRouter } from 'next/navigation';
 //UI
 import InputField from '../input-field';
 
+
 const NewsletterForm = () => {
   const router = useRouter();
   
@@ -18,15 +19,53 @@ const NewsletterForm = () => {
     handleSubmit,
     formState: { errors, isSubmitting },
     reset,
+    setError
   } = useForm<TSubSchema>({
     resolver: zodResolver(subSchema),
   });
   
   const onSubmit = async (data: TSubSchema) => {
-    //TODO: submit to server
-    //....
-    //await new Promise((resolve) => setTimeout(resolve, 2000));
-    router.push('/newsletter/thanks');
+    try {
+      console.log("Sending Post data")
+      const response = await fetch('/api/news-sub', {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      })
+    
+      if(!response.ok){
+        alert("Submitting form failed")
+        return;  
+      }
+
+      const responseData = await response.json();
+
+    
+      if(responseData.errors) {
+        const errors = responseData.errors;
+        if (errors.email) {
+          setError("email", {
+            type: "server",
+            message: errors.email,
+          })
+        } else if (errors.name) {
+          setError("name", {
+            type: "server",
+            message: errors.name,
+          })
+        } else {
+          alert("Something went wrong!");
+        }
+      } else {
+        router.push('/newsletter/thanks');
+      }
+
+    } catch (error) {
+      console.log(error)
+    }
+    
   }
 
   return ( 
@@ -69,52 +108,5 @@ const NewsletterForm = () => {
     </div>
   )
 
-
-
-    // 1. Define your form.
-    //const form = useForm<z.infer<typeof subSchema>>({
-    //  resolver: zodResolver(subSchema),
-    //  defaultValues: {
-    //    name: "John Doe",
-    //    email: "john.doe@padeli.com"
-    //  },
-    //})
-
-    //const onSubmit = async () => {
-    //    try {
-    //      // Perform form submission or any other action here.
-    //      router.push('/newsletter/thanks');
-    //    } catch (error) {
-    //      console.log(error);
-    //    }
-    //  }
-
-    /*return (
-          <form onSubmit={onSubmit}>
-            <div className="self-stretch flex flex-col items-start justify-start gap-[16px]">
-            
-                <InputField
-                    title="First Name"
-                    errorMessage={false}
-                    placeholder="John Doe"
-                />
-
-                <InputField
-                    title="Email"
-                    errorMessage={false}
-                    placeholder="john.doe@padelit.com"
-                />
-            </div>
-
-            <button 
-                className="cursor-pointer mt-4 [border:none] py-3.5 px-7 bg-accent-yellow rounded-md overflow-hidden flex flex-row items-center justify-center hover:bg-hover-yellow"
-                type='submit'
-                >
-              <div className="relative text-base leading-[24px] font-inter text-white text-center">
-                Subscribe
-              </div>
-            </button>
-          </form>
-      )*/
 }
 export default NewsletterForm;
