@@ -20,21 +20,8 @@ export async function POST(request: NextRequest){
         if (process.env.NODE_ENV === 'development'){
     
             //Dev Locally
-            //const redisClient = createClient();
+            const redisClient = createClient();
 
-            //Preview Redis Cloud
-            const redisClient = createClient({
-                password: process.env.REDIS_PREV_PASSWORD,
-                socket: {
-                    host: process.env.REDIS_PREV_URL,
-                    port: Number(process.env.REDIS_PREV_PORT)
-                }
-            })
-
-            //Todo change to launch an error
-            //redisClient.on('error', err => console.log("Redis Client Error", err));
-            //await redisClient.connect();
-            
             //Email Exists
             if (await redisClient.exists(subscriber.email) === 1){
                 zodErrors.email = "Email already exists, introduce a new email";        
@@ -47,13 +34,35 @@ export async function POST(request: NextRequest){
         
         
         } else if (process.env.NODE_ENV === 'production'){
-            //TODO: KV implementation
-            if (await kv.exists(subscriber.email)) {
+            
+            //Preview Redis Cloud
+            const redisClient = createClient({
+                password: process.env.REDIS_PREV_PASSWORD,
+                socket: {
+                    host: process.env.REDIS_PREV_URL,
+                    port: Number(process.env.REDIS_PREV_PORT)
+                }
+            })
+
+            //TODO: Add a error when Connection is down
+
+            //Email Exists
+            if (await redisClient.exists(subscriber.email) === 1){
+                zodErrors.email = "Email already exists, introduce a new email";        
+            }
+
+            //Email Doenst Exist
+            else {
+                await redisClient.set(subscriber.email, subscriber.name)
+            }
+
+            //Uncomment before going to PRD
+            /*if (await kv.exists(subscriber.email)) {
                 zodErrors.email = "Email already exists, introduce a new email";        
             }
             else {
                 await kv.set(subscriber.email, subscriber.name);
-            }
+            }*/
         }
     }    
     
