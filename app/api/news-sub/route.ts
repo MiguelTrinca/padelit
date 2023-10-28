@@ -20,7 +20,15 @@ export async function POST(request: NextRequest){
         if (process.env.NODE_ENV === 'development'){
     
             //Dev Locally
-            const redisClient = createClient();
+            //const redisClient = createClient();
+
+            const redisClient = createClient({
+                password: process.env.REDIS_PREV_PASSWORD,
+                socket: {
+                    host: process.env.REDIS_PREV_URL,
+                    port: Number(process.env.REDIS_PREV_PORT)
+                }
+            })
 
             //Email Exists
             if (await redisClient.exists(subscriber.email) === 1){
@@ -31,6 +39,8 @@ export async function POST(request: NextRequest){
             else {
                 await redisClient.set(subscriber.email, subscriber.name)
             }
+
+            redisClient.quit(); 
         
         
         } else if (process.env.NODE_ENV === 'production'){
