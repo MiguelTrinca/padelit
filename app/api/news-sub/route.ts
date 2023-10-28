@@ -18,23 +18,31 @@ export async function POST(request: NextRequest){
     } else {
         const subscriber: TSubSchema = subSchema.parse(body)
         if (process.env.NODE_ENV === 'development'){
-            const redisClient = createClient();
-            
+    
+            //Dev Locally
+            //const redisClient = createClient();
+
+            //Preview Redis Cloud
+            const redisClient = createClient({
+                password: process.env.REDIS_PREV_PASSWORD,
+                socket: {
+                    host: process.env.REDIS_PREV_URL,
+                    port: Number(process.env.REDIS_PREV_PORT)
+                }
+            })
 
             //Todo change to launch an error
-            redisClient.on('error', err => console.log("Redis Client Error", err));
-            await redisClient.connect();
+            //redisClient.on('error', err => console.log("Redis Client Error", err));
+            //await redisClient.connect();
             
             //Email Exists
             if (await redisClient.exists(subscriber.email) === 1){
-                console.log(subscriber.email + " Exists")
                 zodErrors.email = "Email already exists, introduce a new email";        
             }
 
             //Email Doenst Exist
             else {
                 await redisClient.set(subscriber.email, subscriber.name)
-                console.log(subscriber.email + " Added user")
             }
         
         
