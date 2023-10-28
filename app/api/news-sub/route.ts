@@ -56,6 +56,8 @@ export async function POST(request: NextRequest){
                 await redisClient.set(subscriber.email, subscriber.name)
             }
 
+            redisClient.quit(); 
+
             //Uncomment before going to PRD
             /*if (await kv.exists(subscriber.email)) {
                 zodErrors.email = "Email already exists, introduce a new email";        
