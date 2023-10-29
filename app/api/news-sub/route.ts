@@ -1,5 +1,4 @@
-//import { kv } from '@vercel/kv';
-import { createClient } from "redis";
+import { kv } from '@vercel/kv';
 import { NextRequest, NextResponse } from "next/server";
 import { TSubSchema, subSchema } from "../../../lib/newsletter-types";
 
@@ -18,34 +17,15 @@ export async function POST(request: NextRequest){
     } else {
         const subscriber: TSubSchema = subSchema.parse(body)
 
-            //Dev Locally
-            //const redisClient = createClient();
-
-            //Preview Cloud
-            const redisClient = createClient({
-                password: process.env.REDIS_PREV_PASSWORD,
-                socket: {
-                    host: process.env.REDIS_PREV_URL,
-                    port: Number(process.env.REDIS_PREV_PORT)
-                }
-            })
-          
-
-            redisClient.on('error', err => console.log("Redis Client Error", err));
-            await redisClient.connect();
-
-
-            //Email Exists
-            if (await redisClient.exists(subscriber.email) === 1){
+        //Emial Exists
+            if (await kv.exists(subscriber.email) === 1){
                 zodErrors.email = "Email already exists, introduce a new email";        
             }
 
-            //Email Doenst Exist
+        //Email Doenst Exist
             else {
-                await redisClient.set(subscriber.email, subscriber.name)
+                await kv.set(subscriber.email, subscriber.name)
             }
-
-            redisClient.quit(); 
         
     }    
     
