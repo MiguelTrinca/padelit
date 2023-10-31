@@ -36,7 +36,7 @@ const NewsletterForm = () => {
       })
     
       if(!response.ok){
-        alert("Submitting form failed")
+        alert("Whoops! Alguma coisa aconteceu. Por favor tente mais tarde")
         return;  
       }
 
@@ -56,7 +56,7 @@ const NewsletterForm = () => {
             message: errors.name,
           })
         } else {
-          alert("Something went wrong!");
+          alert("Whoops! Alguma coisa aconteceu. Por favor tente mais tarde")
         }
       } else {
         router.push('/newsletter/thanks');
