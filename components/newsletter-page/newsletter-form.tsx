@@ -80,8 +80,8 @@ const NewsletterForm = () => {
               error={errors.name}
               
               type= "text"
-              title="First Name"
-              placeholder="John Doe"
+              title="Nome"
+              placeholder="João Silva"
           />
           <InputField
               register={register}
@@ -90,12 +90,12 @@ const NewsletterForm = () => {
 
               type='text'
               title='Email'
-              placeholder='john.doe@padelit.com'
+              placeholder='joao.silva@padelit.com'
           />
   
         </div>
         <button 
-            className="cursor-pointer [border:none] mt-4 py-3.5 px-7 bg-accent-yellow rounded-md overflow-hidden flex flex-row items-center justify-center hover:bg-hover-yellow disabled:bg-dark-blue"
+            className="cursor-pointer [border:none] mt-4 py-3.5 px-7 bg-accent-yellow rounded-md overflow-hidden flex flex-row items-center justify-center hover:bg-hover-yellow disabled:bg-dark-blue md:w-full"
             disabled={isSubmitting}
             type="submit"
         >
