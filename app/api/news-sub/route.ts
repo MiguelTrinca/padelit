@@ -49,8 +49,9 @@ export async function POST(request: NextRequest){
                 //Send Email
                 try {
                     //Get Email in HTML form
-                    const emailPath = path.join(__dirname, '../../../../../public/newsletter/bem-vindo-padelit.html');
-                    const emailHtml = fs.readFileSync(emailPath, 'utf-8');
+                    const emailV2 = path.resolve("./public/newsletter/bem-vindo-padelit.html");
+                    //const emailPath = path.join(__dirname, '../../../../../public/newsletter/bem-vindo-padelit.html');
+                    const emailHtml = fs.readFileSync(emailV2, 'utf-8');
 
                     const transport = nodemailer.createTransport({
                         service: 'gmail',
