@@ -39,7 +39,7 @@ export async function POST(request: NextRequest){
         try {
             //Email Exists
             if (await redisClient.exists(subscriber.email) === 1){
-                zodErrors.email = "Email already exists, introduce a new email";        
+                zodErrors.email = "Este email já existe, introduza um email novo.";        
             }
     
             //Email Doenst Exist
