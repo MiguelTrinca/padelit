@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/image';
 import RewardCard from '../../components/newsletter-page/reward-card';
 import NewsletterForm from '../../components/newsletter-page/newsletter-form';
+import Link from 'next/link';
 
 const NewsletterNew = () => {
     return (
@@ -16,7 +17,7 @@ const NewsletterNew = () => {
         
         <div className="max-w-[600px] p-5 relative z-10">
           <div className="self-stretch flex flex-col items-center justify-start gap-[20px] relative">
-            <b className="self-stretch relative leading-[120%] text-white text-[64px] md:text-21xl ">
+            <b className="self-stretch relative leading-[120%] text-white text-[50px] md:text-21xl ">
               Junta-te ao Padelit!
             </b>
             <div className="self-stretch relative leading-[24px] text-[20px] text-white md:text-lg">
@@ -41,6 +42,13 @@ const NewsletterNew = () => {
             <NewsletterForm/>
             
           </div>
+
+          <Link href="/">
+            <button className="fixed top-4 right-4 bg-accent-yellow text-white p-2 hover:bg-hover-yellow rounded cursor-pointer">
+                  Voltar atrás
+            </button>
+          </Link>
+
         </div>
       </div>
     );

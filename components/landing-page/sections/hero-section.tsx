@@ -14,13 +14,16 @@ const HeroSection = () => {
               className="self-stretch relative leading-[120%]"
               style={{fontSize: "60px", color:"#fff", fontFamily: "Inter"}}
             >
-              Experience Padel Like Never Before!
+              Experimente o Padel como Nunca!
             </b>
             <div
-              className="self-stretch relative text-base leading-[24px]"
-              style={{fontSize: "20px", color:"#fff", fontFamily: "Inter"}}
-            >
-              We are hard at work building <span className="font-bold text-accent-yellow">PadelIt!</span>. We cannot be more excited for you to join us! Keep up to date with our development and gain rewards for subscribing to our <span className="font-bold text-accent-yellow">Newsletter!</span>
+              className="self-stretch relative text-grey-white leading-[24px]"
+              style={{fontSize: "20px", fontFamily: "Inter"}}
+            >              
+              
+              Estamos empenhados a desenvolver esta plataforma para si, mantenha-se atualizado com as últimas notícias da plataforma e fique elegível para ganhar recompensas. 
+              Junte-se à comunidade <span className="font-bold text-accent-yellow">Padelit</span> hoje e faça parte da revolução do <span className="font-bold">Padel em Portugal.</span>
+
             </div>
           </div>
 
@@ -28,7 +31,7 @@ const HeroSection = () => {
             <Link href="/newsletter" style={{ textDecoration: 'none', color: 'inherit' }}>
                 <div className="cursor-pointer py-3 px-5 bg-accent-yellow rounded-md overflow-hidden flex flex-row items-center justify-center hover:bg-hover-yellow">
                   <div className="relative text-sm leading-[22px] font-bold font-inter text-white text-center">
-                    Subscribe to Newsletter
+                    Subscreva à Newsletter
                   </div>
                 </div>
             </Link>

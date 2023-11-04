@@ -3,7 +3,7 @@ import "./global.css";
 
 export const metadata = {
     title: 'Padelit',
-    description: 'Best Padel Tennis Platform to engage with the community',
+    description: 'A plataforma de Padel Portuguesa!',
     icons: '/logo/Logo-Dark.svg'
   }
   

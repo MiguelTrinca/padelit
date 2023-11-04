@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useMemo, type CSSProperties } from "react";
 
 
@@ -32,31 +33,40 @@ return (
             </div>
             
             <div className="relative w-[158.47px] h-[36.57px]">
-                <a className="[text-decoration:none] absolute top-[0px] left-[0px] w-[36.57px] h-[36.57px] overflow-hidden">
+                <Link className="[text-decoration:none] absolute top-[0px] left-[0px] w-[36.57px] h-[36.57px] overflow-hidden"
+                    href="https://www.youtube.com/channel/UCMiz6nAHdqrI4B2K2TeBdCw"
+                    target="_blank"
+                >
                     <img className="" 
                                     alt="" 
-                                    src="/vector5.svg"
+                                    src="/youtube-white.svg"
                                     style={socialLogoStyle} 
                         />
-                </a>
-                <a className="[text-decoration:none] absolute top-[0px] left-[121.9px] w-[36.57px] h-[36.57px] overflow-hidden">
+                </Link>
+                <Link className="[text-decoration:none] absolute top-[0px] left-[121.9px] w-[36.57px] h-[36.57px] overflow-hidden"
+                        href="https://twitter.com/PadelitApp"
+                        target="_blank"
+                >
                     <img className="" 
                                     alt="" 
                                     src="/vector6.svg"
                                     style={socialLogoStyle} 
                                 />
-                </a>
-                <a className="[text-decoration:none] absolute top-[0px] left-[60.95px] w-[36.57px] h-[36.57px] overflow-hidden">
+                </Link>
+                <Link className="[text-decoration:none] absolute top-[0px] left-[60.95px] w-[36.57px] h-[36.57px] overflow-hidden"
+                    href="https://www.instagram.com/padelitapp/"
+                    target="_blank"
+                >
                     <img className="" 
                                     alt="" 
                                     src="/vector7.svg"
                                     style={socialLogoStyle}
                     />
-                </a>
+                </Link>
             </div>
         </div>
         <div className="flex-1 overflow-hidden flex flex-row items-center justify-center py-[62px] px-0 text-[20px] md:flex-[unset] md:self-stretch">
-            <div className="relative leading-[27px] font-semibold">Made with love for Padel 🧡</div>
+            <div className="relative leading-[27px] font-semibold">Feito com amor por Padel 🧡</div>
         </div>
     </div>
       );
