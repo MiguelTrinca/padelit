@@ -101,13 +101,13 @@ const NewsletterForm = () => {
             type="submit"
         >
           <div className="relative text-base leading-[24px] font-inter text-white text-center">
-            Subscreva!
+            Subscrever
           </div>
         </button>
 
-        <p className='p-2 text-dark-gray text-sm'>Ao clicar subscrever está aceitar os nossos {" "} 
+        <p className='p-2 text-dark-gray text-sm'>Ao clicares subscrever estás a aceitar os nossos {" "} 
           <Link href={"/newsletter/terms-of-service"} style={{ textDecoration: 'none', color: 'inherit' }}>
-            <span className='underline text-dark-blue'>termos e condições</span>
+            <span className='underline text-dark-blue hover:bg-blue-500'>termos e condições</span>
           </Link> 
         </p>
       
