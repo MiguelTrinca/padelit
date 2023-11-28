@@ -4,7 +4,7 @@ import nodemailer from 'nodemailer';
 
 import { createClient } from "redis";
 import { NextRequest, NextResponse } from "next/server";
-import { TSubSchema, subSchema } from "../../../lib/newsletter-types";
+import { TSubSchema, subSchema } from "@/lib/newsletter-types";
 
 
 export async function POST(request: NextRequest){

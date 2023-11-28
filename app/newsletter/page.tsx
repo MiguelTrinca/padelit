@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image';
-import RewardCard from '../../components/newsletter-page/reward-card';
-import NewsletterForm from '../../components/newsletter-page/newsletter-form';
+import RewardCard from '@/components/newsletter-page/reward-card';
+import NewsletterForm from '@/components/newsletter-page/newsletter-form';
 import Link from 'next/link';
 
 const NewsletterNew = () => {

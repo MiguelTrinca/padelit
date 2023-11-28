@@ -50,7 +50,7 @@ const ExitingFeaturesSection = ({
           
       <FeaturesList
         icon1="/icbaselinerocket9.svg"
-        title1="Crachás no seu Perfil"
+        title1="Crachás no teu Perfil"
         description1="Ganha reconhecimento pelas tuas conquistas e destaca-te da multidão com os nossos crachás únicos."
         
         icon2="/icbaselinerocket10.svg"
