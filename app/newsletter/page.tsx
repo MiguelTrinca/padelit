@@ -3,6 +3,7 @@ import Image from 'next/image';
 import RewardCard from '@/components/newsletter-page/reward-card';
 import NewsletterForm from '@/components/newsletter-page/newsletter-form';
 import Link from 'next/link';
+import BackButton from '@/components/terms-of-service/back-button';
 
 const NewsletterNew = () => {
   return (
@@ -43,14 +44,9 @@ const NewsletterNew = () => {
   
         </div>
   
+      
+        <BackButton/>
         
-  
-        <Link href="/">
-          <button className="fixed top-4 right-4 bg-accent-yellow text-white p-2 hover:bg-hover-yellow rounded cursor-pointer">
-            Voltar atrás
-          </button>
-        </Link>
-  
       </div>
     </div>
   );

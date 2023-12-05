@@ -2,9 +2,7 @@ import React from 'react'
 
 import fs from 'fs';
 import path from 'path';
-import Link from 'next/link';
-
-
+import BackButton from '@/components/terms-of-service/back-button';
 
 const TermsOfServicePage = () => {
     const termsPath = path.resolve("./public/newsletter/terms-of-service.html");
@@ -16,11 +14,7 @@ const TermsOfServicePage = () => {
                 dangerouslySetInnerHTML = {{__html : termsHTML}}
                 className='p-8'
             />
-            <Link href="/newsletter">
-                <button className="fixed top-4 right-4 bg-accent-yellow text-white p-2 hover:bg-hover-yellow rounded cursor-pointer">
-                    Voltar atrás
-                </button>
-            </Link>
+                <BackButton/>
         </div>
   )
 }
