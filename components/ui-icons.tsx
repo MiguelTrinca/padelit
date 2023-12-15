@@ -7,17 +7,17 @@ export const UIIcons = {
                 id="Vector" 
                 d="M19 12H5" 
                 stroke="currentColor"
-                stroke-width="2" 
-                stroke-linecap="round" 
-                stroke-linejoin="round"
+                strokeWidth="2" 
+                strokeLinecap="round" 
+                strokeLinejoin="round"
             />
             <path 
                 id="Vector_2" 
                 d="M12 19L5 12L12 5" 
                 stroke="currentColor" 
-                stroke-width="2" 
-                stroke-linecap="round" 
-                stroke-linejoin="round"
+                strokeWidth="2" 
+                strokeLinecap="round" 
+                strokeLinejoin="round"
             />
         </svg>
     ),
@@ -27,16 +27,16 @@ export const UIIcons = {
         <path 
             d="M18 6L6 18" 
             stroke="currentColor" 
-            stroke-width="2" 
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="2" 
+            strokeLinecap="round"
+            strokeLinejoin="round"
         />
         <path 
             d="M6 6L18 18" 
             stroke="currentColor" 
-            stroke-width="2" 
-            stroke-linecap="round" 
-            stroke-linejoin="round"
+            strokeWidth="2" 
+            strokeLinecap="round" 
+            strokeLinejoin="round"
         />
         </svg>
     ),

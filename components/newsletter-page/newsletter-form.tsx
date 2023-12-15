@@ -4,7 +4,7 @@ import React from 'react'
 
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form";
-import { subSchema, TSubSchema } from '../../lib/newsletter-types';
+import { subSchema, TSubSchema } from '@/lib/zod-types/newsletter-types';
 import { useRouter } from 'next/navigation';
 
 //UI
@@ -27,7 +27,6 @@ const NewsletterForm = () => {
   
   const onSubmit = async (data: TSubSchema) => {
     try {
-      console.log("Sending Post data")
       const response = await fetch('/api/news-sub', {
         method: "POST",
         body: JSON.stringify(data),
@@ -37,7 +36,7 @@ const NewsletterForm = () => {
       })
     
       if(!response.ok){
-        alert("Whoops! Alguma coisa aconteceu. Por favor tente mais tarde")
+        alert("Whoops! Alguma coisa aconteceu. Por favor tenta mais tarde")
         return;  
       }
 
@@ -57,7 +56,7 @@ const NewsletterForm = () => {
             message: errors.name,
           })
         } else {
-          alert("Whoops! Alguma coisa aconteceu. Por favor tente mais tarde")
+          alert("Whoops! Alguma coisa aconteceu. Por favor tenta mais tarde")
         }
       } else {
         router.push('/newsletter/thanks');

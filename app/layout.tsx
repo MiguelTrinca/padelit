@@ -2,6 +2,7 @@ import React from "react";
 import "./global.css";
 import { Inter as FontSans } from "next/font/google"
 import { cn } from "@/lib/utils"
+import AuthProvider from "@/components/AuthProvider";
 
 export const fontSans = FontSans({
     subsets: ["latin"],
@@ -21,18 +22,20 @@ function RootLayout({
     children: React.ReactNode
 }) {
     return (
-        <html lang="en">
-            <body
-                className={ cn(
-                    "min-h-screen bg-background font-sans antialiased",
-                    fontSans.variable
-                  )}
-            >
-                <main>
-                    {children}
-                </main>
-            </body>
-        </html>    
+        <AuthProvider>
+            <html lang="en">
+                <body
+                    className={ cn(
+                        "min-h-screen bg-background font-sans antialiased",
+                        fontSans.variable
+                      )}
+                >
+                    <main>
+                        {children}
+                    </main>
+                </body>
+            </html>
+        </AuthProvider>
         )
 }
 

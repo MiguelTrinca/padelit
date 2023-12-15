@@ -4,7 +4,7 @@ import nodemailer from 'nodemailer';
 
 import { createClient } from "redis";
 import { NextRequest, NextResponse } from "next/server";
-import { TSubSchema, subSchema } from "@/lib/newsletter-types";
+import { TSubSchema, subSchema } from "@/lib/zod-types/newsletter-types";
 
 
 export async function POST(request: NextRequest){
@@ -39,7 +39,7 @@ export async function POST(request: NextRequest){
         try {
             //Email Exists
             if (await redisClient.exists(subscriber.email) === 1){
-                zodErrors.email = "Este email já existe, introduza um email novo.";        
+                zodErrors.email = "Este email já existe, introduz um email novo.";        
             }
     
             //Email Doenst Exist
@@ -63,7 +63,7 @@ export async function POST(request: NextRequest){
                     const mailOptions = {
                         from: 'padelit.app@gmail.com',
                         to: subscriber.email,
-                        subject: `Bem-vindo a Padelit! ${subscriber.name}`,
+                        subject: `Bem-vindo à Padelit! ${subscriber.name}`,
                         html: emailHtml, // Use the HTML content from the file
                     };
 
@@ -101,6 +101,6 @@ export async function POST(request: NextRequest){
     return  NextResponse.json(
         Object.keys(zodErrors).length > 0 
         ? { errors: zodErrors } 
-        : {success: true}
+        : {success: true }
     );
 }
