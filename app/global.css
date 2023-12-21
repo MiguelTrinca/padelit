@@ -2,7 +2,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Font+Awesome+5+Free:wght@400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
 @tailwind base;
 @tailwind components;
@@ -42,6 +41,8 @@ body {
   :root {
     --background:  300 100% 99%; /*Snow White*/
     --foreground: 217 24% 17%;  /*Gun Metal*/
+    --foreground-light: 222 12% 46%; /*Light Gun Metal*/
+    
     --primary: 32 99% 66%; /*Sandy Brown*/
     --primary-foreground: 300 100% 99%; /*Snow White*/
     --secondary: 221 12% 46%; /*Slate Gray*/
