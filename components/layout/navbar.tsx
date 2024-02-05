@@ -1,6 +1,6 @@
 'use client'
 import Image from 'next/image'
-import React, { useState, CSSProperties, useRef } from 'react'
+import React, { useState, CSSProperties, useRef, useEffect } from 'react'
 import { useMediaQuery } from '@react-hook/media-query'
 import SearchInput from '../search'
 import ProfileCard from './profile-card'
@@ -12,8 +12,11 @@ import Link from 'next/link'
 import { Session } from 'next-auth'
 import { Button } from '../ui/button'
 import { signOut } from 'next-auth/react'
+import { usePathname } from 'next/navigation'
 
 const Navbar =  ({session}: {session: Session }) => {
+
+    const currentPage = usePathname()
 
     //SESSION
     //user: {
@@ -57,10 +60,10 @@ const Navbar =  ({session}: {session: Session }) => {
         }
       };
 
-
       const handleSearch = () => {
         alert("You Search For something")
       }
+
 
   return (
     <div className='flex h-[77px] p-3 items-center justify-between overflow-hidden'>
@@ -127,16 +130,16 @@ const Navbar =  ({session}: {session: Session }) => {
                             <div className='flex flex-col w-11/12 gap-3 items-start '>
                                 <Link href='home' 
                                     style={{textDecoration: 'none', color: 'inherit'}} 
-                                    className='flex py-4 px-3 gap-4 justify-start items-center self-stretch rounded-lg font-semibold hover:bg-primary/10 hover:font-bold cursor-pointer' onClick={toggleSheet}>
-                                        <UIIcons.home className='fill-primary'/>
-                                        <span className='font-inter text-primary text-base'>Home</span>
+                                    className={`flex py-4 px-3 gap-4 justify-start items-center self-stretch rounded-lg hover:font-bold ${currentPage === '/home' ? 'font-semibold hover:bg-primary/10 fill-primary cursor-default' : 'hover:bg-foreground/10 hover:font-bold fill-secondary cursor-pointer'} `} onClick={toggleSheet}>
+                                        <UIIcons.home/>
+                                        <span className={`font-inter text-base ${currentPage === '/home' ? 'text-primary' : 'text-secondary'}`}>Home</span>
                                 </Link>
                                 
                                 <Link href='play' 
                                     style={{textDecoration: 'none', color: 'inherit'}} 
-                                    className='flex py-4 px-3 gap-4 justify-start items-center self-stretch rounded-lg font-normal hover:bg-foreground/10 hover:font-bold cursor-pointer' onClick={toggleSheet}>
-                                        <UIIcons.racketBall className='fill-secondary'/>
-                                        <span className='font-inter text-secondary text-base'>Play</span>
+                                    className={`flex py-4 px-3 gap-4 justify-start items-center self-stretch rounded-lg hover:font-bold ${currentPage === '/play' ? 'font-semibold hover:bg-primary/10 fill-primary cursor-default' : 'hover:bg-foreground/10 hover:font-bold fill-secondary cursor-pointer'} `} onClick={toggleSheet}>
+                                        <UIIcons.racketBall/>
+                                        <span className={`font-inter text-base ${currentPage === '/play' ? 'text-primary' : 'text-secondary'}`}>Play</span>
                                 </Link>
                                 
                                 <div className='flex py-4 px-3 gap-4 justify-start items-center self-stretch rounded-lg font-normal hover:bg-foreground/10 hover:font-bold cursor-not-allowed'>
@@ -206,10 +209,20 @@ const Navbar =  ({session}: {session: Session }) => {
                 <div className="flex justify-center items-center
                     gap-[31px] text-center text-lg text-secondary font-inter">
 
-                    <div className='font-bold text-accent-yellow'> Home</div>
-                    <div className="font-light hover:font-bold cursor-pointer">Play</div>
-                    <div className="font-light hover:font-bold cursor-pointer">Communities</div>
-                    <div className=" font-light hover:font-bold cursor-pointer">Shop</div>
+                    <div className={`hover:font-bold ${currentPage === '/home' ? 'font-bold text-primary cursor-default' : 'cursor-pointer'} `}> 
+                        <Link href='home' style={{textDecoration: 'none', color: 'inherit', cursor: 'inherit'}}>
+                                Home
+                        </Link>
+                    </div>
+
+                    <div className={`hover:font-bold ${currentPage === '/play' ? 'font-bold text-primary cursor-default' : 'cursor-pointer'}`}>
+                        <Link href='play' style={{textDecoration: 'none', color: 'inherit', cursor: 'inherit'}}>
+                                Play
+                        </Link>
+                    </div>
+
+                    <div className="text-muted hover:font-bold cursor-not-allowed">Communities</div>
+                    <div className="text-muted hover:font-bold cursor-not-allowed">Shop</div>
 
                 </div>
             }
