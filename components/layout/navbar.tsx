@@ -9,8 +9,21 @@ import FriendsSheet from './friends-sheet'
 import { UIIcons } from '../ui-icons'
 import { Separator } from '../ui/separator'
 import Link from 'next/link'
+import { Session } from 'next-auth'
+import { Button } from '../ui/button'
+import { signOut } from 'next-auth/react'
 
-const Navbar = () => {
+const Navbar =  ({session}: {session: Session }) => {
+
+    //SESSION
+    //user: {
+    //  name: 'padelit',
+    //  email: 'padelit.app@gmail.com',
+    //  image: 'https://lh3.googleusercontent.com/a/ACg8ocKDisooC64UsvQ7L-e17RZXySte_f9Fvyj19iKL2wRFWA=s96-c',
+    //  id: '112389572366237730831'
+    //}
+    
+
 
     const isMobile = useMediaQuery('(max-width: 1020px)')
     const [isSheetOpen, setIsSheetOpen] = useState(false);
@@ -161,23 +174,28 @@ const Navbar = () => {
 
                             <div className='flex pt-56 w-11/12 gap-5 items-end '>
                                 <div className='flex w-12 h-12 justify-center items-center'>
-                                    <Image
-                                        src='logo/Logo-Dark.svg'
-                                        alt='Profile Picture'
-                                        objectFit='contain'
-                                        width='48'
-                                        height='48'
-                                        className='bg-foreground rounded-lg'
-                                    />
+
+                                        <Image
+                                            src={session.user?.image ?  session.user?.image : 'logo/Logo-White.svg' }
+                                            alt='Profile Picture'
+                                            objectFit='contain'
+                                            width='48'
+                                            height='48'
+                                            className='rounded-lg'
+                                        />
+                                        
                                 </div>
                                 <div className='flex flex-col items-start gap-2 font-inter font-bold text-lg text-foreground'>
-                                    <span>Profile 1</span>
+                                    <span>{session.user?.name ? session.user.name : session.user?.email}</span>
                                     <div className='flex items-center gap-1'>
                                         <UIIcons.coin 
                                             className='w-4 h-4'
                                         />
                                         <span className='font-normal text-xs text-primary'>2</span>
                                     </div>
+                                </div>
+                                <div className='ml-auto mr-2'>
+                                    <Button onClick={() => signOut()}>Sign Out</Button>
                                 </div>
                             </div>
                         </div>
@@ -212,7 +230,7 @@ const Navbar = () => {
                 </div>
 
                 {/** Profile Div */}
-                <ProfileCard/>
+                <ProfileCard session={session}/>
             </div>
         }
 

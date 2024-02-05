@@ -1,5 +1,4 @@
 import NextAuth, { NextAuthOptions } from "next-auth"
-import {Account, User } from "next-auth" 
 
 //Providers
 import CredentialsProvider from "next-auth/providers/credentials"
@@ -7,8 +6,7 @@ import GoogleProvider from 'next-auth/providers/google'
 
 import connectMongo from "@/lib/db"
 import UserModel from "@/models/User"
-import { TzodUserSchema, zodUserSchema } from "@/lib/zod-types/user-types";
-
+import { zodUserSchema } from "@/lib/zod-types/user-types";
 
 export const authOptions: NextAuthOptions = {
     session: {
@@ -44,7 +42,6 @@ export const authOptions: NextAuthOptions = {
                     id: user._id,
                     email: user.email
                 }
-
             },
         }),
         GoogleProvider({

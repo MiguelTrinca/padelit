@@ -11,12 +11,10 @@ import {
 
 import Link from 'next/link'
 import { signOut } from 'next-auth/react'
+import { Session } from 'next-auth'
 
-const ProfileCard = () => {
-    const handleSignOut = () => {
-        signOut();
-    }
-
+const ProfileCard = ({session}: {session: Session }) => {
+    
   return (
     <DropdownMenu>
         <DropdownMenuTrigger className='bg-transparent focus:ring-transparent cursor-pointer outline-0'>
@@ -27,17 +25,17 @@ const ProfileCard = () => {
             '>
 
             <Image
-                src="logo/Logo-White.svg"
+                src={session.user?.image ? session.user.image : "logo/Logo-White.svg"}
                 alt="Profile"
                 objectFit='contain'
                 width="34"
                 height="34"
-                className=''
+                className='rounded-lg'
             />
 
             <div className='flex flex-col justify-center items-start'>
                 <span className='font-inter text-xs'>
-                    Profile 1
+                    {session.user?.name ? session.user?.name : session.user?.email}
                 </span>
                 {/** Coins*/ }
                 <div className='flex items-center gap-x-1'>
@@ -78,7 +76,7 @@ const ProfileCard = () => {
 
             <DropdownMenuItem 
                 className='text-secondary font-inter gap-3 fill-secondary hover:fill-secondary-foreground cursor-pointer'
-                onClick={handleSignOut}
+                onClick={ () => signOut() }
             >
                 <UIIcons.signOut/>
                 Sign Out
