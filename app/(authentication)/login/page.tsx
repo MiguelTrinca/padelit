@@ -31,13 +31,6 @@ import { zodUserSchema, TzodUserSchema } from "@/lib/zod-types/user-types"
 
 const Login = () => {
   const router = useRouter();
-  const session = useSession();
-
-  //useEffect(() => {
-  //  if (session?.status === "authenticated") {
-  //    router.replace("/home")
-  //  }
-  //}, [session, router] )
 
   const handleClose  = () => {
     router.push('/');
@@ -55,8 +48,6 @@ const Login = () => {
 
   const onSubmit = async (data: TzodUserSchema) => {
     //CAll API
-    console.log("Logging in")
-
     const res = await signIn("credentials", {
       email: data.email,
       password: data.password,

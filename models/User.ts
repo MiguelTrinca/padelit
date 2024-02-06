@@ -10,6 +10,7 @@ interface UserDocument extends Document {
     email: string;
     name: string;
     password: string;
+    image: string;
 }
 
 interface Methods {
@@ -29,7 +30,10 @@ const userSchema = new Schema<UserDocument, {}, Methods>({
     password: {
         type: String,
         required: true
-    }
+    },
+    image: {
+        type: String,
+    },
 })
 
 //Hash the password before saving

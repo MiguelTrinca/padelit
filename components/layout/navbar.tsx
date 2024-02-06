@@ -16,18 +16,7 @@ import { usePathname } from 'next/navigation'
 
 const Navbar =  ({session}: {session: Session }) => {
 
-    const currentPage = usePathname()
-
-    //SESSION
-    //user: {
-    //  name: 'padelit',
-    //  email: 'padelit.app@gmail.com',
-    //  image: 'https://lh3.googleusercontent.com/a/ACg8ocKDisooC64UsvQ7L-e17RZXySte_f9Fvyj19iKL2wRFWA=s96-c',
-    //  id: '112389572366237730831'
-    //}
-    
-
-
+    const currentPage = usePathname()  
     const isMobile = useMediaQuery('(max-width: 1020px)')
     const [isSheetOpen, setIsSheetOpen] = useState(false);
     const wrapperRef = useRef<HTMLDivElement | null>(null);
