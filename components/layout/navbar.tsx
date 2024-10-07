@@ -14,7 +14,7 @@ import { Button } from '../ui/button'
 import { signOut } from 'next-auth/react'
 import { usePathname } from 'next/navigation'
 
-const Navbar =  ({session}: {session: Session }) => {
+const Navbar =  ({session}: {session?: Session }) => {
 
     const currentPage = usePathname()  
     const isMobile = useMediaQuery('(max-width: 1020px)')
@@ -168,7 +168,7 @@ const Navbar =  ({session}: {session: Session }) => {
                                 <div className='flex w-12 h-12 justify-center items-center'>
 
                                         <Image
-                                            src={session.user?.image ?  session.user?.image : 'logo/Logo-White.svg' }
+                                            src={session?.user?.image ?  session.user?.image : 'logo/Logo-White.svg' }
                                             alt='Profile Picture'
                                             objectFit='contain'
                                             width='48'
@@ -178,7 +178,7 @@ const Navbar =  ({session}: {session: Session }) => {
                                         
                                 </div>
                                 <div className='flex flex-col items-start gap-2 font-inter font-bold text-lg text-foreground'>
-                                    <span>{session.user?.name ? session.user.name : session.user?.email}</span>
+                                    <span>{session?.user?.name ? session.user.name : (session?.user?.email ? session?.user?.name : "John Doe")}</span>
                                     <div className='flex items-center gap-1'>
                                         <UIIcons.coin 
                                             className='w-4 h-4'

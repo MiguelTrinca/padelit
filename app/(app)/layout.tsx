@@ -9,13 +9,18 @@ interface Props {
 }
 
 export default async function PrivateLayout({ children }: Props){
-    const session = await getServerSession(authOptions)
+    //const session = await getServerSession(authOptions)
     
-    if(!session?.user) redirect("/login")
+    //Add this to prod
+    //if(!session?.user) redirect("/login")
 
     return (
         <>
-        <Navbar session={session}/>
+        {
+        // Add his in prod to 
+        // <Navbar session={session}
+        }
+        <Navbar/>
         {children}
         </>
     )

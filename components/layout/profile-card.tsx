@@ -13,7 +13,7 @@ import Link from 'next/link'
 import { signOut } from 'next-auth/react'
 import { Session } from 'next-auth'
 
-const ProfileCard = ({session}: {session: Session }) => {
+const ProfileCard = ({session}: {session?: Session }) => {
     
   return (
     <DropdownMenu>
@@ -25,7 +25,7 @@ const ProfileCard = ({session}: {session: Session }) => {
             '>
 
             <Image
-                src={session.user?.image ? session.user.image : "logo/Logo-White.svg"}
+                src={session?.user?.image ? session.user.image : "logo/Logo-White.svg"}
                 alt="Profile"
                 objectFit='contain'
                 width="34"
@@ -35,7 +35,7 @@ const ProfileCard = ({session}: {session: Session }) => {
 
             <div className='flex flex-col justify-center items-start'>
                 <span className='font-inter text-xs'>
-                    {session.user?.name ? session.user?.name : session.user?.email}
+                    {session?.user?.name ? session.user.name : (session?.user?.email ? session?.user?.name : "John Doe")}
                 </span>
                 {/** Coins*/ }
                 <div className='flex items-center gap-x-1'>

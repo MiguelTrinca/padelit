@@ -17,6 +17,9 @@ interface Methods {
     comparePassword(password: string): Promise<boolean>;
 }
 
+/**
+ * Only required email and password
+ */
 const userSchema = new Schema<UserDocument, {}, Methods>({
     email: {
         type: String,

@@ -8,6 +8,13 @@ import UserModel from "@/models/User";
 
 import { NextRequest, NextResponse } from "next/server";
 
+/**
+ *  This API call creates a User given an email and a password. 
+ * @param request = {email, password}
+ * @returns 
+ */
+
+
 export async function POST(request: NextRequest) {
     //Get data from request
     const body: unknown = await request.json()
