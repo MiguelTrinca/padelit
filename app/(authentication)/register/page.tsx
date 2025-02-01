@@ -60,8 +60,6 @@ const Register = () => {
 
   const onSubmit = async (data: TzodUserSchema) => {
     //Call API
-    console.log("Creating a new user")
-
     try { 
       const response = await fetch('/api/auth/users', {
         method: "POST",
@@ -95,7 +93,12 @@ const Register = () => {
           alert("Whoops! Alguma coisa aconteceu. Por favor tenta mais tarde")
         }
       } else {
-        router.push('/home')
+          await signIn("credentials", {
+            email: data.email,
+            password: data.password,
+            redirect: false,
+          })
+          router.push('/home') 
       }
 
     } catch (error) {

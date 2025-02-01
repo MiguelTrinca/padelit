@@ -10,12 +10,16 @@ interface UserDocument extends Document {
     email: string;
     name: string;
     password: string;
+    image: string;
 }
 
 interface Methods {
     comparePassword(password: string): Promise<boolean>;
 }
 
+/**
+ * Only required email and password
+ */
 const userSchema = new Schema<UserDocument, {}, Methods>({
     email: {
         type: String,
@@ -29,7 +33,10 @@ const userSchema = new Schema<UserDocument, {}, Methods>({
     password: {
         type: String,
         required: true
-    }
+    },
+    image: {
+        type: String,
+    },
 })
 
 //Hash the password before saving

@@ -1,5 +1,4 @@
 import NextAuth, { NextAuthOptions } from "next-auth"
-import {Account, User } from "next-auth" 
 
 //Providers
 import CredentialsProvider from "next-auth/providers/credentials"
@@ -7,8 +6,7 @@ import GoogleProvider from 'next-auth/providers/google'
 
 import connectMongo from "@/lib/db"
 import UserModel from "@/models/User"
-import { TzodUserSchema, zodUserSchema } from "@/lib/zod-types/user-types";
-
+import { zodUserSchema } from "@/lib/zod-types/user-types";
 
 export const authOptions: NextAuthOptions = {
     session: {
@@ -19,9 +17,9 @@ export const authOptions: NextAuthOptions = {
             type: "credentials",
             credentials: {},
 
+            //LogIn with Credentials
             async authorize(credentials, req) {
                 //Simplify Validation with Zod
-                console.log("Verifying!")
                 const result = zodUserSchema.safeParse(credentials)
                 if (!result.success){
                     throw Error("Email ou palavra-passe incorretos")                    
@@ -42,9 +40,10 @@ export const authOptions: NextAuthOptions = {
 
                 return {
                     id: user._id,
-                    email: user.email
+                    email: user.email,
+                    image: user.image,
+                    name: user.name,
                 }
-
             },
         }),
         GoogleProvider({
@@ -52,7 +51,7 @@ export const authOptions: NextAuthOptions = {
             clientSecret: process.env.GOOGLE_CLIENT_SECRET ?? ""
         })
     ],
-    //This functions will run the first time and we run the log in request
+    //This functions will run the first time and when run the log in request
     callbacks: {
         jwt(params: any) {
             if (params.user) {
@@ -75,9 +74,17 @@ export const authOptions: NextAuthOptions = {
                 try {
                     const existingUser = await UserModel.findOne({ email: user.email })
                     if (!existingUser) {
-                        await UserModel.create({ email: user.email })
+                        await UserModel.create({ email: user.email, name: user.name, image: user.image })
                         return true
-                    }
+                    } else {
+                        if(!existingUser.image) {
+                            existingUser.image = user.image ?? ""
+                        }
+                        if(!existingUser.name) {
+                            existingUser.name = user.name ?? ""
+                        }
+                        await existingUser.save()
+                    } 
 
                     return true
 

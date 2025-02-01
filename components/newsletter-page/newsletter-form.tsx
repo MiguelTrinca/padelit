@@ -63,7 +63,7 @@ const NewsletterForm = () => {
       }
 
     } catch (error) {
-      console.log(error)
+      console.log("Error in the app")
     }
     
   }
