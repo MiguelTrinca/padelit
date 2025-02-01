@@ -3,9 +3,7 @@ import Image from "next/image";
 const Home = () => {
 
     const user = {
-        name: "Zoey Lang",
-        image: "/zoey.jpg",
-        badges: ["React", "Next.js", "Tailwind"],
+        name: "Miguel Trinca",
         rank: "Gold",
         wins: 42,
         losses: 18,
@@ -33,6 +31,35 @@ const Home = () => {
               <span> Losses: 70</span>
             </div>
           </div>
+
+        <div className="flex pl-4 gap-8 justify-start">
+          <div className="flex gap-4"> 
+            <div className="flex justify-center items-center">
+                <span>Icon</span>
+              </div>
+            <div className="flex flex-col justify-start">
+              <span>Card to play</span>
+              <span>Be excited to play</span>
+              
+            </div>
+          </div>
+
+          <div className="flex gap-4"> 
+            <div className="flex justify-center items-center">
+                <span>Icon</span>
+              </div>
+            <div className="flex flex-col justify-start">
+              <span>Card to play</span>
+              <span>Be excited to play</span>
+              
+            </div>
+          </div>
+        </div>
+
+        <br></br>
+        <div> Card to invite</div>
+        <div> List of friends</div>
+
         </div>
     )
 }
